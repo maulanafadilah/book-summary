@@ -26,7 +26,7 @@
 </head>
 <body class="w-full h-screen flex justify-center">
 
-    <div class="w-full h-full max-w-md md:shadow-xl">
+    <div class="w-full h-full max-w-md md:shadow-xl" id="device">
         <!-- Header Start -->
         @if($header == true)
             @include('elements.header')
@@ -45,7 +45,7 @@
     </div>
     
 
-    <!-- Flowbite JS -->
+    <!-- Tailwind JS -->
     @vite('resources/js/app.js')
 
     <!-- Datepicker Flowbite -->

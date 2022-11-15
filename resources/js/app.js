@@ -1,19 +1,26 @@
 import './bootstrap';
 import 'flowbite';
 
-// Detect OS
-// const body = document.querySelector('body');
+// DETECT OS
+var osDetection = navigator.userAgent || navigator.vendor || window.opera;
+var windowsPhoneDetection = /windows phone/i.test(osDetection);
+var androidDetection = /android/i.test(osDetection);
+var iosDetection = /iPad|iPhone|iPod/.test(osDetection) && !window.MSStream;
 
-// switch (true){
-//     case (navigator.platform.indexOf('Win') != -1):
-//     case (navigator.platform.indexOf('Mac') != -1):
-//     case (navigator.platform.indexOf('Linux') != -1):
-//         body.classList.add('hidden');
-//         break;
-// }
+const device = document.getElementById('device');
+switch (true){
+    case (windowsPhoneDetection):
+    case (androidDetection):
+    case (iosDetection):
+      device.classList.add('device-active');
+      break;
+    default:
+      device.classList.add('hidden');
+      break;
+}
 
 
-// target element that will be dismissed
+// ALERT
 const targetEl = document.getElementById('alert');
 
 // options object
@@ -38,8 +45,8 @@ setTimeout(() => {
 }, 1500);
 }
 
-// showAll
 
+// BODY HEIGHT
 window.onscroll = function(){
     const body = document.querySelector('body');
     const bodyOffset = body.offsetTop;
