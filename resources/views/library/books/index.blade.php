@@ -64,6 +64,7 @@
         </div>
 
         <div class="w-full h-full grid grid-cols-2 gap-6">
+        @if(!empty($books))
             @foreach ($books as $item)
             <a href="/book/{{$item->id}}" class="w-full h-full flex flex-col items-center justify-between">
                 <div class="w-[70%] bg-cover rounded-xl shadow-lg overflow-hidden flex mb-2">
@@ -75,6 +76,7 @@
                 </div>
             </a>
             @endforeach
+        @endif
             <!-- <div class="w-full h-full flex flex-col items-center justify-between">
                 <div class="w-[70%] bg-cover rounded-xl shadow-lg overflow-hidden flex mb-2">
                     <img src="{{url('/assets/images/win.jpg')}}" alt="Getting Things Done" class="">
